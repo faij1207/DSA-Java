@@ -22,3 +22,13 @@ public class ZeroOneTriangle {
         pattern(row);
     }
 }
+
+
+// output
+
+// enter you row size :
+// 4
+// 1
+// 01
+// 101
+// 0101

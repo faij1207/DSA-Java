@@ -33,6 +33,6 @@ public class HollowRectangle {
 // enter you column size :
 // 5
 // *****
-// * *
-// * *
+// *   *
+// *   *
 // *****
