@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class InverseNumberPyramid {
+public class InverseNumberHalfPyramid {
     
     public static void pattern(int n) {
         for (int i = 1; i <= n; i++) {
