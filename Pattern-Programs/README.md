@@ -10,12 +10,13 @@ This directory contains Java implementations of various pattern printing program
 A Java program to print a right-angled triangle pattern using stars (`*`).
 
 **Output:**
-| Pattern |
-| --- |
-| *      |
-| **     |
-| ***    |
-| ****   |
+
+```
+ *      
+ **     
+ ***    
+ **** 
+ ```  
 
 ### 2. `InvertedRightAngle.java`
 
@@ -23,12 +24,13 @@ A Java program to print a right-angled triangle pattern using stars (`*`).
 A Java program to print an inverted right-angled triangle pattern using stars (`*`).
 
 **Output:**
-| Pattern |
-| --- |
-| ****   |
-| ***    |
-| **     |
-| *      |
+
+```  
+ ****   
+ ***    
+ **     
+ *    
+ ```    
 
 ### 3. `NumberTriangle.java`
 
@@ -36,12 +38,13 @@ A Java program to print an inverted right-angled triangle pattern using stars (`
 A Java program to print a right-angled triangle pattern using numbers.
 
 **Output:**
-| Pattern |
-| --- |
-| 1      |
-| 12     |
-| 123    |
-| 1234   |
+
+```  
+1      
+12     
+123    
+1234 
+```    
 
 ### 4. `FloydNumber.java`
 
@@ -49,12 +52,12 @@ A Java program to print a right-angled triangle pattern using numbers.
 A Java program to print Floyd's triangle pattern using numbers.
 
 **Output:**
-| Pattern |
-| --- |
-| 1      |
-| 23     |
-| 456    |
-| 78910  |
+```  
+1      
+23     
+456    
+78910 
+```   
 
 ### 5. `FloydCharacter.java`
 
@@ -62,14 +65,15 @@ A Java program to print Floyd's triangle pattern using numbers.
 A Java program to print Floyd's triangle pattern using characters.
 
 **Output:**
-| Pattern |
-| --- |
-| A      |
-| BC     |
-| DEF    |
-| GHIJ   |
+```  
+A      
+BC     
+DEF    
+GHIJ 
+```    
 
 **How to Run:**
 ```bash
 javac filename.java
 java filename.java
+```
