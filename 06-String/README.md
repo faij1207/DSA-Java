@@ -78,6 +78,18 @@ A **StringBuilder** is a mutable alternative to String, allowing modifications w
   System.out.println(sb); // Output: Hello World
   ```
 
+### StringBuffer
+
+A **StringBuffer** is similar to StringBuilder but is thread-safe, meaning it is synchronized and can be used safely in a multi-threaded environment.
+
+- **Example**:
+
+  ```java
+  StringBuffer sb = new StringBuffer("Hello");
+  sb.append(" World");
+  System.out.println(sb); // Output: Hello World
+  ```
+
 ## Programs Included
 
 1. **ShortestPath.java**
