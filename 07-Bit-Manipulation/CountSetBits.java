@@ -20,3 +20,6 @@ public class CountSetBits {
         System.out.println(countSetBits(n));
     }   
 }
+
+//output: Enter the number:15
+//        4
