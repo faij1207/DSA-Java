@@ -3,7 +3,7 @@ class Student {
     String name;
     int age;
 
-    // 1️⃣ Default Constructor (No Arguments)
+    // 1️⃣ Default Constructor (No Arguments) , non-parameterized constructor
     Student() {
         System.out.println("Default Constructor Called!");
         name = "Unknown";
