@@ -2,125 +2,257 @@
 
 ## Description
 
-**Object-Oriented Programming System (OOPS)** is a programming paradigm based on the concept of "objects" that contain data (fields) and methods (functions). OOPS helps in organizing code, making it reusable, and improving security.
+**Object-Oriented Programming System (OOPS)** is a programming paradigm based on the concept of "objects." These objects can hold data in fields (attributes) and code in methods (functions). OOPS makes it easier to manage and organize large codebases, making code more reusable, modular, and secure.
 
-### Key Properties of OOPS
+OOPS focuses on real-world entities such as inheritance, hiding, polymorphism, and more. It improves software design and development by modeling classes and objects.
 
-1. **Class & Object**
-   - A class is a blueprint for creating objects.
-   - An object is an instance of a class.
+---
 
-   ```java
-   class Car {
-       String brand;
-       void display() {
-           System.out.println("Brand: " + brand);
-       }
-   }
+### Key Concepts and Properties of OOPS
 
-   public class Main {
-       public static void main(String[] args) {
-           Car car = new Car();
-           car.brand = "Toyota";
-           car.display();
-       }
-   }
-   ```
+#### 1. **Class & Object**
 
-2. **Access Modifiers**
-   - Control access to classes, methods, and variables.
-   - Types: `public`, `private`, `protected`, and default.
+- **Class**: A blueprint for creating objects. It defines attributes and methods.
+- **Object**: An instance of a class containing specific values.
 
-   ```java
-   public class Example {
-       private int number;
-       public void setNumber(int num) {
-           this.number = num;
-       }
-       public int getNumber() {
-           return number;
-       }
-   }
-   ```
+**Example:**
 
-3. **Getter and Setter**
-   - Used to access and update private variables.
+```java
+class Car {
+    String brand;
+    void display() {
+        System.out.println("Brand: " + brand);
+    }
+}
 
-   ```java
-   public class Person {
-       private String name;
-       public String getName() {
-           return name;
-       }
-       public void setName(String name) {
-           this.name = name;
-       }
-   }
-   ```
+public class Main {
+    public static void main(String[] args) {
+        Car car = new Car(); // Object creation
+        car.brand = "Toyota";
+        car.display();
+    }
+}
+```
+
+#### 2. **Access Modifiers**
+
+Control the visibility of classes, methods, and variables.
+
+- `public`: Accessible from anywhere.
+- `private`: Accessible only within the class.
+- `protected`: Accessible within the same package or subclasses.
+- Default: Accessible within the same package.
+
+**Example:**
+
+```java
+public class Example {
+    private int number;
+    public void setNumber(int num) {
+        this.number = num;
+    }
+    public int getNumber() {
+        return number;
+    }
+}
+```
+
+#### 3. **Getter and Setter**
+
+Used to access and update private variables safely.
+
+**Example:**
+
+```java
+public class Person {
+    private String name;
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+```
+
+---
 
 ### Four Pillars of OOPS
 
-1. **Encapsulation** *(Encapsulation.java)*
-   - Binding data and methods into a single unit.
-   - Provides security by restricting direct access.
+#### 1. **Encapsulation** *(Encapsulation.java)*
 
-2. **Constructor** *(Constructor.java)*
-   - Initializes objects when they are created.
-   - Types: Default, Parameterized, Copy.
+- Encapsulation binds data and methods into a single unit.
+- Restricts direct access to certain components.
 
-3. **Destructor** *(Destructor.java)*
-   - Java handles destruction automatically through garbage collection.
-   - Demonstrates object cleanup.
+**Example:**
 
-4. **Inheritance**
-   - Allows a class to inherit properties from another class.
+```java
+public class BankAccount {
+    private double balance;
+    public void deposit(double amount) {
+        if(amount > 0) balance += amount;
+    }
+    public double getBalance() {
+        return balance;
+    }
+}
+```
 
-   - *SingleInheritance.java*: One class inherits from another.
-   - *MultilevelInheritance.java*: Inheritance across multiple levels.
-   - *Hierarchical.java*: Multiple classes inherit from one base class.
-   - *Hybrid.java*: Combination of two or more types of inheritance.
-   - *MultipleInheritance.java*: Achieved using interfaces in Java.
+#### 2. **Constructor** *(Constructor.java)*
 
-5. **Polymorphism** *(Polymorphism.java)*
-   - Allows objects to take many forms.
-   - Types:
-     - Compile-time (Method Overloading)
-     - Run-time (Method Overriding)
+- Special method called when an object is instantiated.
+- Types:
+  - **Default Constructor**: No arguments.
+  - **Parameterized Constructor**: Takes parameters.
+  - **Copy Constructor**: Creates a copy of another object.
 
-6. **Abstraction** *(Abstraction.java)*
-   - Hides unnecessary details and shows only essential features.
-   - Achieved using abstract classes and interfaces.
+**Example:**
 
-7. **Interfaces** *(Interface.java)*
-   - Specifies methods a class must implement.
+```java
+public class Student {
+    String name;
+    int age;
 
-8. **Static Keyword**
-   - Belongs to the class rather than an instance.
+    // Default Constructor
+    public Student() {
+        name = "Unknown";
+        age = 0;
+    }
 
-   ```java
-   class Example {
-       static int count = 0;
-       static void displayCount() {
-           System.out.println("Count: " + count);
-       }
-   }
-   ```
+    // Parameterized Constructor
+    public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
 
-9. **Super Keyword**
-   - Refers to the immediate parent class.
+    // Copy Constructor
+    public Student(Student student) {
+        this.name = student.name;
+        this.age = student.age;
+    }
+}
+```
 
-   ```java
-   class Parent {
-       void display() {
-           System.out.println("Parent Method");
-       }
-   }
-   class Child extends Parent {
-       void display() {
-           super.display();
-           System.out.println("Child Method");
-       }
-   }
+#### 3. **Destructor** *(Destructor.java)*
+
+- Java doesn’t have destructors but uses Garbage Collection.
+- The `finalize()` method can be used for cleanup.
+
+**Example:**
+
+```java
+public class Resource {
+    protected void finalize() throws Throwable {
+        System.out.println("Object is being deleted");
+    }
+}
+```
+
+#### 4. **Inheritance**
+
+- Allows a class to inherit properties from another class.
+
+**Types:**
+
+- *Single Inheritance* *(SingleInheritance.java)*: A class inherits from one superclass.
+- *Multilevel Inheritance* *(MultilevelInheritance.java)*: A class inherits from a superclass, which in turn inherits from another superclass.
+- *Hierarchical Inheritance* *(Hierarchical.java)*: Multiple classes inherit from a single superclass.
+- *Hybrid Inheritance* *(Hybrid.java)*: A combination of two or more types of inheritance. Note: Java does not support hybrid inheritance directly but can be achieved using interfaces.
+- *Multiple Inheritance* *(MultipleInheritance.java)*: A class inherits from more than one superclass. Note: Java supports multiple inheritance through interfaces.
+
+#### 5. **Polymorphism** *(Polymorphism.java)*
+
+- Allows objects to take many forms.
+- Types:
+  - **Compile-time Polymorphism (Overloading):** Multiple methods with the same name.
+  - **Runtime Polymorphism (Overriding):** Subclass provides specific implementation.
+
+**Example:**
+
+```java
+class Shape {
+    void draw() {
+        System.out.println("Drawing a shape");
+    }
+}
+class Circle extends Shape {
+    void draw() {
+        System.out.println("Drawing a circle");
+    }
+}
+```
+
+#### 6. **Abstraction** *(Abstraction.java)*
+
+- Hides implementation details and shows essential features.
+
+**Example:**
+
+```java
+abstract class Animal {
+    abstract void makeSound();
+}
+
+class Cat extends Animal {
+    void makeSound() {
+        System.out.println("Meow");
+    }
+}
+```
+
+#### 7. **Interfaces** *(Interface.java)*
+
+- Defines a contract that a class must implement.
+
+**Example:**
+
+```java
+interface Vehicle {
+    void start();
+}
+
+class Car implements Vehicle {
+    public void start() {
+        System.out.println("Car is starting");
+    }
+}
+```
+
+#### 8. **Static Keyword**
+
+- Belongs to the class instead of an instance.
+
+**Example:**
+
+```java
+class Example {
+    static int count = 0;
+    static void displayCount() {
+        System.out.println("Count: " + count);
+    }
+}
+```
+
+#### 9. **Super Keyword**
+
+- Refers to the immediate parent class.
+
+**Example:**
+
+```java
+class Parent {
+    void display() {
+        System.out.println("Parent Method");
+    }
+}
+
+class Child extends Parent {
+    void display() {
+        super.display();
+        System.out.println("Child Method");
+    }
+}
+```
 
 ## How to Run the Programs
 
