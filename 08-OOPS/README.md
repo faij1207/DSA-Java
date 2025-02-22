@@ -98,7 +98,7 @@ public class BankAccount {
 }
 ```
 
-#### 2. **Constructor** *(Constructor.java)*
+#### **Constructor** *(Constructor.java)*
 
 - Special method called when an object is instantiated.
 - Types:
@@ -133,7 +133,7 @@ public class Student {
 }
 ```
 
-#### 3. **Destructor** *(Destructor.java)*
+#### **Destructor** *(Destructor.java)*
 
 - Java doesn’t have destructors but uses Garbage Collection.
 - The `finalize()` method can be used for cleanup.
@@ -148,7 +148,7 @@ public class Resource {
 }
 ```
 
-#### 4. **Inheritance**
+#### 2. **Inheritance**
 
 - Allows a class to inherit properties from another class.
 
@@ -160,7 +160,7 @@ public class Resource {
 - *Hybrid Inheritance* *(Hybrid.java)*: A combination of two or more types of inheritance. Note: Java does not support hybrid inheritance directly but can be achieved using interfaces.
 - *Multiple Inheritance* *(MultipleInheritance.java)*: A class inherits from more than one superclass. Note: Java supports multiple inheritance through interfaces.
 
-#### 5. **Polymorphism** *(Polymorphism.java)*
+#### 3. **Polymorphism** *(Polymorphism.java)*
 
 - Allows objects to take many forms.
 - Types:
@@ -182,7 +182,7 @@ class Circle extends Shape {
 }
 ```
 
-#### 6. **Abstraction** *(Abstraction.java)*
+#### 4. **Abstraction** *(Abstraction.java)*
 
 - Hides implementation details and shows essential features.
 
@@ -200,7 +200,9 @@ class Cat extends Animal {
 }
 ```
 
-#### 7. **Interfaces** *(Interface.java)*
+---
+
+#### **Interfaces** *(Interface.java)*
 
 - Defines a contract that a class must implement.
 
@@ -218,7 +220,7 @@ class Car implements Vehicle {
 }
 ```
 
-#### 8. **Static Keyword**
+#### **Static Keyword**
 
 - Belongs to the class instead of an instance.
 
@@ -233,7 +235,7 @@ class Example {
 }
 ```
 
-#### 9. **Super Keyword**
+#### *Super Keyword**
 
 - Refers to the immediate parent class.
 
