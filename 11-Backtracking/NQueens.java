@@ -26,10 +26,13 @@ public class NQueens {
         return true;
     }
 
+    static int count = 0;
+
     public static void nQueen (char board[][], int row) {
         //base case
         if(row == board.length) {
             printBoard(board);
+            count++;
             return;
         }
         
@@ -56,7 +59,7 @@ public class NQueens {
     }
 
     public static void main(String[] args) {
-        int n = 4;
+        int n = 1;
         char board[][] = new char[n][n];
 
         //initialize the board
@@ -67,5 +70,7 @@ public class NQueens {
         }
 
         nQueen(board, 0);
+
+        System.out.println("totel solutions: " + count);
     }
 }
