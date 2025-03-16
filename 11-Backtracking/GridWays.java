@@ -15,10 +15,31 @@ public class GridWays {
         return w1 + w2;
     }
 
+    //optimized method (mathe trick for linear time complexity)
+    public static int optimizedWays(int m, int n) {
+        // Using permutation formula: (m+n-2)! / ((m-1)! * (n-1)!)
+        return factorial(m + n - 2) / (factorial(m - 1) * factorial(n - 1));
+    }
+
+    public static int factorial(int num) {
+        if (num == 0 || num == 1) {
+            return 1;
+        }
+        int result = 1;
+        for (int i = 2; i <= num; i++) {
+            result *= i;
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         int n = 4;
         int m = 4;
+        //total ways to reach from (0,0) to (m-1, n-1) using recursion
         System.out.println(totelWays(0, 0, m, n));
+
+        //optimized method using math trick
+        System.out.println(optimizedWays(m, n));
     }    
 }
 
