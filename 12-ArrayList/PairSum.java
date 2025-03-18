@@ -4,12 +4,29 @@ public class PairSum {
 
     //brute force approach
     //Time complexity: O(n^2)
+    // public static boolean sum1(ArrayList<Integer> numbers, int target) {
+    //     for (int i = 0; i < numbers.size(); i++) {
+    //         for (int j = i + 1; j < numbers.size(); j++) {
+    //             if (numbers.get(i) + numbers.get(j) == target) {
+    //                 return true;
+    //             }
+    //         }
+    //     }
+    //     return false;
+    // }
+
+    //Optimized approach(two pointer approach)
+    //Time complexity: O(n)
     public static boolean sum1(ArrayList<Integer> numbers, int target) {
-        for (int i = 0; i < numbers.size(); i++) {
-            for (int j = i + 1; j < numbers.size(); j++) {
-                if (numbers.get(i) + numbers.get(j) == target) {
-                    return true;
-                }
+        int left = 0;
+        int right = numbers.size() - 1;
+        while (left < right) {
+            if (numbers.get(left) + numbers.get(right) == target) {
+                return true;
+            } else if (numbers.get(left) + numbers.get(right) < target) {
+                left++;
+            } else {
+                right--;
             }
         }
         return false;
