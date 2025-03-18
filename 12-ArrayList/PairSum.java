@@ -43,6 +43,9 @@ public class PairSum {
         numbers.add(4);
         numbers.add(5);
         numbers.add(6);
+
+        int target = 9;
+        System.out.println(sum1(numbers, target));
     }
     
 }
