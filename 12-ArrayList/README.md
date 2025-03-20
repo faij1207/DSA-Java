@@ -20,7 +20,7 @@ ArrayList is a resizable array implementation of the `List` interface in Java. U
 | Type-Specific | Yes   | No (supports generics) |
 | Built-in Methods | No | Yes |
 
-### Example:
+### Example
 
 ```java
 // Using an array
@@ -48,7 +48,7 @@ ArrayList<Integer> list = new ArrayList<>(); // Declaration
 
 Demonstrates basic ArrayList operations.
 
-#### Example
+#### Example ArrayList Operations
 
 ```java
 ArrayList<Integer> list = new ArrayList<>();
@@ -63,7 +63,7 @@ System.out.println(list.contains(10)); // Output: true
 
 Finds the maximum and minimum values in an ArrayList.
 
-#### Example
+#### Example Find Max and Min
 
 ```java
 Collections.max(list); // Finds the max value
@@ -76,7 +76,7 @@ Collections.min(list); // Finds the min value
 
 Sorts an ArrayList in ascending and descending order.
 
-#### Example
+#### Example Sorting
 
 ```java
 Collections.sort(list); // Ascending order
@@ -89,7 +89,7 @@ Collections.sort(list, Collections.reverseOrder()); // Descending order
 
 Demonstrates a 2D ArrayList.
 
-#### Example:
+#### Example Multi DimensionalList
 
 ```java
 ArrayList<ArrayList<Integer>> matrix = new ArrayList<>();
@@ -101,7 +101,7 @@ ArrayList<ArrayList<Integer>> matrix = new ArrayList<>();
 
 Calculates max water storage.
 
-#### Example:
+#### Example 1
 
 ```java
 // Uses two-pointer technique
@@ -113,7 +113,7 @@ Calculates max water storage.
 
 Calculates trapped rainwater.
 
-#### Example:
+#### Example trap water
 
 ```java
 // Uses left and right max boundary arrays
@@ -125,7 +125,7 @@ Calculates trapped rainwater.
 
 Finds pairs that sum to a target (sorted list).
 
-#### Example:
+#### Example pair sum
 
 ```java
 // Uses two-pointer technique
@@ -137,7 +137,7 @@ Finds pairs that sum to a target (sorted list).
 
 Finds pairs that sum to a target (sorted & rotated list).
 
-#### Example:
+#### Example pair sum 2
 
 ```java
 // Uses modified two-pointer approach
