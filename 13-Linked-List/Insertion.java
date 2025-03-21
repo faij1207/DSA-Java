@@ -1,4 +1,4 @@
-public class AddNode {
+public class  Insertion{
     
     // Head of the linked list
     public static class Node {
@@ -36,7 +36,7 @@ public class AddNode {
     }
 
     public static void main(String[] args) {
-        AddNode ll=new AddNode();
+        Insertion ll=new Insertion();
         ll.head = new Node(1);
 
         // Adding new node at start of the linked list
