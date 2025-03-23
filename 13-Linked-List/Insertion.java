@@ -16,6 +16,10 @@ public class  Insertion{
     // Head and tail of the linked list
     public static Node head;
     public static Node tail;
+    
+
+    // Size of the linked list
+    public static int size;
 
     //---------------------------------------------------------------------------------------------------------
 
@@ -24,6 +28,7 @@ public class  Insertion{
     public void addNodeAtStart(int data) {
         //step 1: create a new node
         Node newNode = new Node(data);
+        size++;
 
         //check if linked list is empty
         if (head == null) {
@@ -45,6 +50,7 @@ public class  Insertion{
     public void addNodeAtEnd(int data) {
         //step 1: create a new node
         Node newNode = new Node(data);
+        size++;
 
         //check if linked list is empty
         if (head == null) {
@@ -71,6 +77,7 @@ public class  Insertion{
 
         //step 1: create a new node
         Node newNode = new Node(data);
+        size++;
         Node temp = head;
         int count = 0;
 
@@ -122,6 +129,8 @@ public class  Insertion{
         ll.addNodeInMiddle(10, 2);
 
         // Printing the linked list
-        ll.printList();
+        ll.printList(); // 2->3->10->4->5->null
+
+        System.out.println("Size of linked list: " + size); // 5
     }
 }
