@@ -1,5 +1,6 @@
 public class  Insertion{
     
+    //----------------------------------------------------------------------------------------------------------
     // Head of the linked list
     public static class Node {
         int data;
@@ -15,6 +16,8 @@ public class  Insertion{
     // Head and tail of the linked list
     public static Node head;
     public static Node tail;
+
+    //---------------------------------------------------------------------------------------------------------
 
     // Function to add a new node in start of the linked list
     // Time Complexity: O(1)
@@ -35,6 +38,8 @@ public class  Insertion{
         head = newNode;
     }
 
+    //---------------------------------------------------------------------------------------------------------
+
     // Function to add a new node at the end of the linked list
     // Time Complexity: O(1)
     public void addNodeAtEnd(int data) {
@@ -54,6 +59,36 @@ public class  Insertion{
         tail = newNode;
     }
 
+    //---------------------------------------------------------------------------------------------------------
+
+    //function to add a new node in the middle of the linked list
+    //Time Complexity: O(n)
+    public void addNodeInMiddle(int data, int position) {
+        if (position == 0) {
+            addNodeAtStart(data);
+            return;
+        }
+
+        //step 1: create a new node
+        Node newNode = new Node(data);
+        Node temp = head;
+        int count = 0;
+
+        //step 2: traverse the linked list till the position
+        while (count < position - 1) {
+            temp = temp.next;
+            count++;
+        }
+
+        //step 3: point new node to next node
+        newNode.next = temp.next;
+
+        //step 4: point previous node to new node
+        temp.next = newNode;
+    }
+
+    //---------------------------------------------------------------------------------------------------------
+
     //print linked list
     public void printList() {
         //check if linked list is empty
@@ -70,6 +105,8 @@ public class  Insertion{
         System.out.println("null");
     }
 
+    //---------------------------------------------------------------------------------------------------------
+
     public static void main(String[] args) {
         Insertion ll=new Insertion();
 
@@ -80,6 +117,9 @@ public class  Insertion{
         // Adding new node at end of the linked list
         ll.addNodeAtEnd(4);
         ll.addNodeAtEnd(5);
+
+        // Adding new node in the middle of the linked list
+        ll.addNodeInMiddle(10, 2);
 
         // Printing the linked list
         ll.printList();
