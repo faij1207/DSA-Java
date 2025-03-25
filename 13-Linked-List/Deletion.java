@@ -48,6 +48,28 @@ public class Deletion {
         return data;
     }
 
+    //------------------------------------------------------------------------------------------------------
+    // Delete last node
+    public int deleteLast() {
+        if (size == 0) {
+            System.out.println("Linked list is empty");
+            return Integer.MIN_VALUE;
+        }else if(size==1) {
+            int data = head.data;
+            head = tail = null;
+            size--;
+            return data;
+        }
+        Node temp = head;
+        while (temp.next != tail) {
+            temp = temp.next;
+        }
+        int data = tail.data;
+        tail = temp;
+        tail.next = null;
+        size--;
+        return data;
+    }
     public void printList() {
         if (head == null) {
             System.out.println("Linked list is empty");
