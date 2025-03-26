@@ -31,7 +31,7 @@ public class Deletion {
 
     //------------------------------------------------------------------------------------------------------
     // Delete first node
-
+    //time complexity: O(1)
     public int deleteFirst() {
         if (size == 0) {
             System.out.println("Linked list is empty");
@@ -50,6 +50,7 @@ public class Deletion {
 
     //------------------------------------------------------------------------------------------------------
     // Delete last node
+    //time complexity: O(n)
     public int deleteLast() {
         if (size == 0) {
             System.out.println("Linked list is empty");
@@ -70,6 +71,29 @@ public class Deletion {
         size--;
         return data;
     }
+
+    //------------------------------------------------------------------------------------------------------
+    // Delete node at a given position
+    //time complexity: O(n)
+    public int deleteAt(int position) {
+        if (position < 0 || position >= size) {
+            System.out.println("Invalid position");
+            return Integer.MIN_VALUE;
+        }else if(position==0) {
+            return deleteFirst();
+        }else if(position==size-1) {
+            return deleteLast();
+        }
+        Node temp = head;
+        for (int i = 0; i < position - 1; i++) {
+            temp = temp.next;
+        }
+        int data = temp.next.data;
+        temp.next = temp.next.next;
+        size--;
+        return data;
+    }
+
     public void printList() {
         if (head == null) {
             System.out.println("Linked list is empty");
@@ -96,6 +120,13 @@ public class Deletion {
 
         list.deleteFirst();
         list.printList(); // 2->3->4->5->6->7->null
+
+        list.deleteLast();
+
+        list.printList(); // 2->3->4->5->6->null
+
+        list.deleteAt(2);
+        list.printList(); // 2->3->5->6->null
         
     }
 }
