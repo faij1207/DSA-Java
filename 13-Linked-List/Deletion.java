@@ -94,6 +94,32 @@ public class Deletion {
         return data;
     }
 
+    //remove nth node from the end of the linked list
+    //time complexity: O(n)
+    public int removeNthFromEnd(int n) {
+        if (n <= 0 || n > size) {
+            System.out.println("Invalid position");
+            return Integer.MIN_VALUE;
+        }else if(n==1) {
+            return deleteLast();
+        }else if(n==size) {
+            return deleteFirst();
+        }
+        Node fast = head;
+        Node slow = head;
+        for (int i = 0; i < n; i++) {
+            fast = fast.next;
+        }
+        while (fast.next != null) {
+            fast = fast.next;
+            slow = slow.next;
+        }
+        int data = slow.next.data;
+        slow.next = slow.next.next;
+        size--;
+        return data;
+    }
+
     public void printList() {
         if (head == null) {
             System.out.println("Linked list is empty");
