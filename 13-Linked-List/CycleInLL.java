@@ -51,6 +51,47 @@ public class CycleInLL {
         return false; // No cycle detected
     }
 
+    //---------------------------------------------------------------------------------------
+    //remove cycle in linked list
+
+    public static void removeCycle() {
+        //check if the list is empty
+        if (head == null) {
+            return;
+        }
+
+        //detect cycle
+        Node slow = head;
+        Node fast = head;
+        boolean hasCycle = false;
+        while (fast != null && fast.next != null) {
+            slow = slow.next; // Move slow pointer by 1 step
+            fast = fast.next.next; // Move fast pointer by 2 steps
+
+            if (slow == fast) { // Cycle detected
+                hasCycle = true;
+                break;
+            }
+        }
+
+        if (hasCycle == false) {
+            return; // No cycle detected
+        }
+
+        //find meeting point
+        slow = head;
+        Node prev= null; // To keep track of the previous node of fast pointer
+        while (slow != fast) {
+            prev = fast; // Store the previous node of fast pointer
+            slow = slow.next; // Move slow pointer by 1 step
+            fast = fast.next; // Move fast pointer by 1 step
+        }
+
+        //remove cycle
+        prev.next = null; // Set the next of the previous node of fast pointer to null
+    }
+    
+
     public void printList() {
         if (head == null) {
             System.out.println("Linked list is empty");
@@ -81,9 +122,12 @@ public class CycleInLL {
         } else {
             System.out.println("No cycle detected in the linked list.");
         }
-        // Printing the linked list (will cause infinite loop if cycle exists)
-        //list.printList(); // Uncommenting this line will cause an infinite loop due to the cycle
-        // To avoid infinite loop, we can print the linked list before creating the cycle
+        
+        // Removing cycle
+        removeCycle();
+        System.out.println("Cycle removed from the linked list.");
+        // Printing the linked list after removing cycle
+        list.printList();
 
     }
 }
