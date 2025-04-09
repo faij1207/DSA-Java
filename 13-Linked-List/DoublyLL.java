@@ -156,6 +156,24 @@ public class DoublyLL {
         System.out.println("null");
     }
 
+    //print reverse of doubly linked list
+    public void reverseLL(){
+        Node curr =head ;
+        Node prev =null;
+        Node next;
+
+        while (curr != null) {
+            next =curr.next;
+            curr.next=prev;
+            curr.prev=next ;
+
+            prev=curr;
+            curr=next;
+        }
+
+        head=prev;
+    }
+
     public static void main(String[] args) {
       
         DoublyLL dll = new DoublyLL();
@@ -174,5 +192,8 @@ public class DoublyLL {
         dll.printLL(); // 20<->10<->40<->null
 
         System.out.println("Size of the list: " + size); // Size of the list: 3
+
+        dll.reverseLL();
+        dll.printLL();
     }
 }
