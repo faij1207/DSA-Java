@@ -8,7 +8,7 @@ public class StackArrayList {
         private static ArrayList<Integer> stackList = new ArrayList<>(); // ArrayList to store stack elements
 
         // check if stack is empty
-        public boolean isEmpty() {
+        public static boolean isEmpty() {
             return stackList.size() == 0;
         }
 
@@ -19,6 +19,11 @@ public class StackArrayList {
 
         // pop element from stack
         public static int pop() {
+            if (isEmpty()) { // check if stack is empty
+                System.out.println("Stack is empty. Cannot pop element.");
+                return -1; // return -1 if stack is empty
+                
+            }
             int top = stackList.get(stackList.size() - 1); // get the last element
             stackList.remove(stackList.size() - 1); // remove the last element
             return top; // return the popped element
@@ -26,6 +31,10 @@ public class StackArrayList {
 
         // peek at the top element of the stack
         public static int peek() {
+            if (isEmpty()) { // check if stack is empty
+                System.out.println("Stack is empty. Cannot peek element.");
+                return -1; // return -1 if stack is empty
+            }
             return stackList.get(stackList.size() - 1); // return the last element without removing it
         }
     } 
